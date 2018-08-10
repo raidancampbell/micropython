@@ -24,6 +24,7 @@ class WifiOled:
         self.oled.text('ip:' + sta_if.ifconfig()[0], 0, 0)
         self.oled.show()
 
-    def disp(self, _str, row=0):
+    def disp(self, _str, row=0, show=True):
         self.oled.text(_str, 0, row*10)
-        self.oled.show()
+        if show:
+            self.oled.show()
